@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">{{Title}}</div>
+    <div class="body">
+      <ul>
+        <div *ngIf="tasks">
+          <h2>All the tasks</h2>
+          <button (click)=getTasksFromService()>Click to show tasks</button>
+          <ul>
+            <li *ngFor="let task of tasks">
+              {{task.title}} - {{task.description}}
+              <button >show task</button>
+            </li>
+          </ul>
+        </div>
+      </ul>
+    </div>
+    <div class="form">
+      <!-- <form (submit) = 'onSubmit()' class = "postForm">
+        <p>{{newTask | json}}</p>
+        <label>Task Title</label>
+        <input type="text" name="newTaskTitle" [(ngModel)]="newTask.Title" />
+        <label>Task Description</label>
+        <input type="text" name="newTaskDesc" [(ngModel)]="newTask.description" />
+        <input type="submit" value="create Task!">
+      </form> -->
+    </div>
+  </div>
+</body>
+</html>

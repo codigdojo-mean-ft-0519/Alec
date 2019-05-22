@@ -1,0 +1,37 @@
+<h1>{{Title}}</h1>
+<h1>New Task</h1>
+<p> {{ newTask | json }} </p>
+<div id="newForm">
+  <form (submit)="onSubmit()">
+  <p>Title: <input id="top" class="fields" type="text" name="newTaskTitle" [(ngModel)]="newTask.title"/></p>
+  <p>Description: <input class="fields" type="text" name="newTaskDescription" [(ngModel)]="newTask.description"/></p>
+  <input  id="create" type="submit" value="Create Task"/>
+  </form>
+</div>
+<!-- <button (click)='getTasksFromService()'>Click to show all Tasks</button> -->
+<div *ngIf='tasks'>
+  <p>hello</p>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor='let x of tasks'>
+      <td>{{x.title}}</td>
+      <td>{{x.description}}</td>
+      <td><button (click)='onDelete(x)'>Delete</button>
+          <button (click)='editForm(x)'>Edit</button></td>
+    </tr>
+  </table>
+</div>
+<!-- EDIT FORM   -->
+<div *ngIf='toggleEddit'>
+  <h2>Edit task</h2>
+  <form (submit)="onEdit()">
+    <p>Title: <input id="top" class="fields" type="text" name="newTaskTitle" [(ngModel)]="newTask.title" value='{{selectedTask}}'/></p>
+    <p>Description: <input class="fields" type="text" name="newTaskDescription" [(ngModel)]="newTask.description"/></p>
+    <input  id="create" type="submit" value="update Task"/>
+    </form>
+</div>
+
