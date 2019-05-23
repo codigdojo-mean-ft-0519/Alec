@@ -1,8 +1,14 @@
 export class Cake {
-  _id: number;
-  baker: string;
+  _id: string;
+  bakerName: string;
+  url: string;
   stars = 0;
-  rating;
+  rating: Rating[];
   createdAt: number;
   updatedAt: number;
+}
+export class Rating {
+  _id: string;
+  rating: number;
+  comment: string;
 }

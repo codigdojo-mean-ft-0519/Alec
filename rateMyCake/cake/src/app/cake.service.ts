@@ -16,10 +16,10 @@ export class CakeService {
   getCake(id: string): Observable<Cake> {
     return this.http.get<Cake>(`/cake/${id}`);
   }
-  createCake(cake){
-    return this.http.post('/cake', cake);
+  createCake(cake: Cake): Observable<Cake> {
+    return this.http.post<Cake>('/cake', cake);
   }
-  deleteCake(id: string): Observable<Cake> {
-    return this.http.delete<Cake>(`/cake/delete/${id}`);
+  updateCake(cake:Cake): Observable<Cake> {
+    return this.http.put<Cake>(`/cakes/${cake._id}`, cake);
   }
 }

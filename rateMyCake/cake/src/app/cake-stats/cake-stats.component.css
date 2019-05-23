@@ -1,0 +1,48 @@
+.col {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  overflow: auto;
+  height: 320px;
+}
+
+.row {
+  padding: 0px 5px 5px 5px;
+  margin-bottom: 20px;
+}
+
+img {
+  width: 100%;
+}
+
+.col-50 {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+}
+
+.comment-side {
+  padding-left: 30px;
+  color: #656668;
+}
+
+.comment-side p {
+  font-family: "Arial Black", sans-serif;
+}
+
+.comment-block {
+  margin-bottom: 20px;
+}
+
+.comment-block p {
+  font-family: "Arial Black", sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

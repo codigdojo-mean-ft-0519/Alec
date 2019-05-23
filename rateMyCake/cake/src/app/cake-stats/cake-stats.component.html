@@ -1,3 +1,17 @@
-<p>
-  cake-stats works!
-</p>
+<div class="container">
+  <h1>{{cakeToShow.bakerName}}</h1>
+  <div class="row">
+    <div class="col-50 img-block">
+      <img src="{{cakeToShow.url}}">
+    </div>
+    <div class="col-50 comment-side">
+      <p>Average rating: </p>
+      <div *ngFor="let rating of cakeToShow.rating">
+        <div class="comment-block">
+          <p><span>"</span>{{rating.comment}}<span>"</span></p>
+          <p>{{rating.rating}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

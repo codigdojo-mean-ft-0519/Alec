@@ -3,7 +3,8 @@ const Cake = mongoose.model("Cake");
 
 module.exports = {
   allcakes: (req,res) => {
-    Cake.find([{}])
+    Cake.find({})
+    .populate('ratings')
     .then(cakes => res.json(cakes))
     .catch(error => res.json(error))
   },
@@ -17,9 +18,9 @@ module.exports = {
     .then(cake => res.json(cake))
     .catch(err => res.json(err))
   },
-  delete: (req,res) => {
-    Cake.findByIdAndRemove(req.params.id)
+  update: (req,res) => {
+    Cake.findByIdAndUpdate( rq.params._id, req.body,{new: true})
     .then(cake => res.json(cake))
-    .catch(err => res.json(err))
+    .catch(err => res.json(err));
   }
 };

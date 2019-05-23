@@ -4,7 +4,7 @@ const path = require("path");
 const models_path = path.join(__dirname, "./../models");
 
 
-mongoose.connect('mongodb://localhost/cake_rating', {
+mongoose.connect('mongodb://localhost/Rate_my_cakes', {
   useNewUrlParser: true,
   useCreateIndex: true
 });
