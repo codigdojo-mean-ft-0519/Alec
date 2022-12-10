@@ -23,7 +23,7 @@
     "buffer": "^5.2.1",
     "core-js": "^2.5.4",
     "epress": "0.0.1-security",
-    "express": "^4.17.0",
+    "express": "^4.17.3",
     "mongoose": "^5.5.10",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
